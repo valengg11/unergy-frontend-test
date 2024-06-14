@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react';
 import axios from 'axios';
+import ProjectCard from './components/project-card/ProjectCard';
 
 function App() {
   const [projects, setProjects] = useState([]);
@@ -16,11 +17,12 @@ function App() {
     fetchProjects();
   }, []);
 
-  console.log(projects)
-
   return (
     <div className="app">
       <h1>Projectos</h1>
+      {projects.map(project => (
+        <ProjectCard key={project.nombre_topico} project={project} />
+      ))}
     </div>
   );
 }
