@@ -1,6 +1,7 @@
-import {useEffect, useState} from 'react';
-import axios from 'axios';
-import ProjectCard from './components/project-card/ProjectCard';
+import { useEffect, useState } from "react";
+import axios from "axios";
+import ProjectCard from "./components/project-card/ProjectCard";
+import "./styles/main.scss";
 
 function App() {
   const [projects, setProjects] = useState([]);
@@ -8,10 +9,10 @@ function App() {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await axios.get('/api/landing/project/');
+        const response = await axios.get("/api/landing/project/");
         setProjects(response.data);
       } catch (error) {
-        console.error('Error fetching the projects:', error);
+        console.error("Error fetching the projects:", error);
       }
     };
     fetchProjects();
@@ -20,9 +21,11 @@ function App() {
   return (
     <div className="app">
       <h1>Projectos</h1>
-      {projects.map(project => (
-        <ProjectCard key={project.nombre_topico} project={project} />
-      ))}
+      <div className="projects_container">
+        {projects.map(project =>
+          <ProjectCard key={project.nombre_topico} project={project} />
+        )}
+      </div>
     </div>
   );
 }
