@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import {useEffect, useState} from 'react';
+import axios from 'axios';
 
 function App() {
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const response = await axios.get('/api/landing/project/');
+        setProjects(response.data);
+      } catch (error) {
+        console.error('Error fetching the projects:', error);
+      }
+    };
+    fetchProjects();
+  }, []);
+
+  console.log(projects)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <h1>Projectos</h1>
     </div>
   );
 }
