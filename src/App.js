@@ -16,11 +16,16 @@ function App() {
       }
     };
     fetchProjects();
+    
   }, []);
 
   return (
     <div className="app">
-      <h1>Projectos</h1>
+      <div className="header">
+        <hr/>
+        <h1>PROYECTOS</h1>
+        <hr/>
+      </div>
       <div className="projects_container">
         {projects.map(project =>
           <ProjectCard key={project.nombre_topico} project={project} />
