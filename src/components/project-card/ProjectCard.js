@@ -1,5 +1,6 @@
 import React from "react";
 import "./ProjectCard.scss";
+import InvestButton from "../invest-button/InvestButton";
 import {
   FaMoneyBillTrendUp,
   FaLocationDot,
@@ -67,6 +68,10 @@ function ProjectCard({ project }) {
           </p>
         </div>
       </div>
+      <div className="button-container">
+        <InvestButton/>
+      </div>
+      
     </div>
   );
 }

@@ -1,25 +1,23 @@
 @import '../../styles/variables';
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
 .project_card {
   background: $primary-color;
   border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
-  font-family: Roboto;
+  box-shadow: $shadow;
+  font-family: $primary-font;
   width: 360px;
 
   .card-content {
-    padding: 30px 20px;
-    color: #18396b;
+    padding: 20px;
+    color: #2b4164;
 
     div {
-        display: flex;
-        margin-bottom: 10px;
+      display: flex;
+      margin-bottom: 10px;
 
-        p {
-            margin-left: 5px;
-        }
+      p {
+        margin-left: 5px;
+      }
     }
   }
 
@@ -30,10 +28,8 @@
       position: absolute;
       top: -10px;
       left: -15px;
-    //   background-color: #447cd4;
-      background-color: #ffffff;
-    //   color: #ffffff;
-    color: #447cd4;
+      background-color: $primary-color;
+      color: $secondary-color;
       padding: 10px 12px;
       margin: 0;
       z-index: 1;
@@ -41,7 +37,7 @@
       font-size: 18px;
       border-radius: 5px;
       font-weight: 600;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+      box-shadow: $shadow;
       text-transform: uppercase;
     }
   }
@@ -55,7 +51,7 @@
     }
 
     .financiacion-container {
-      background: #ffffff;
+      background: $primary-color;
       width: 100px;
       position: absolute;
       margin-top: -30px;
@@ -63,7 +59,7 @@
       text-align: center;
       border-radius: 100%;
       padding: 8px;
-      color: #447cd4;
+      color: $secondary-color;
     }
     p:nth-of-type(1) {
       font-size: 20px;
@@ -72,5 +68,12 @@
     p:nth-of-type(2) {
       font-size: 14px;
     }
+  }
+
+  .button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
   }
 }
