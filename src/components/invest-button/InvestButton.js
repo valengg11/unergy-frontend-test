@@ -2,7 +2,7 @@ import "./InvestButton.scss"
 
 function InvestButton({}) {
     return (
-        <button>¡CONOCER MÁS!</button>
+        <button className="invest-button">¡CONOCER MÁS!</button>
     )
 }
 

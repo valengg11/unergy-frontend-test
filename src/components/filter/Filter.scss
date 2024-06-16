@@ -1,0 +1,10 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.filters-container {
+    @include flex-center;
+    width: 100%;
+    background: $primary-color;
+    box-shadow: $shadow;
+    padding: 10px;
+}
