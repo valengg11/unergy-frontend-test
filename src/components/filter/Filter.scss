@@ -4,7 +4,23 @@
 .filters-container {
     @include flex-center;
     width: 100%;
+    height: 60px;
     background: $primary-color;
     box-shadow: $shadow;
     padding: 10px;
+
+    button {
+        background: $primary-color;
+        border: 0.5px solid $secondary-color;
+        font-size: 18px;
+        padding: 5px 10px;
+        border-radius: 5px;
+        color: $secondary-color;
+        margin: 0 5px;
+        cursor: pointer;
+    }
+
+    :hover {
+        border: 2px solid $secondary-color;;
+    }
 }
