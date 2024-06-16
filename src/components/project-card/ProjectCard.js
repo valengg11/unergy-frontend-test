@@ -1,5 +1,10 @@
 import React from "react";
 import "./ProjectCard.scss";
+import {
+  FaMoneyBillTrendUp,
+  FaLocationDot,
+  FaCalendarDay
+} from "react-icons/fa6";
 
 function ProjectCard({ project }) {
   const {
@@ -42,15 +47,25 @@ function ProjectCard({ project }) {
       </div>
 
       <div className="card-content">
-        <p>
-          <b>Rentabilidad estimada:</b> {formatToThreeDecimals(rentabilidad)}
-        </p>
-        <p>
-          <b>Localización:</b> {id_caracterizacion.ciudad}
-        </p>
-        <p>
-          <b>Fecha de inicio de rentabilidad:</b> {fecha_inicio_rentabilidad}
-        </p>
+        <div>
+          <FaLocationDot />{" "}
+          <p>
+            <b>Localización:</b> {id_caracterizacion.ciudad}
+          </p>
+        </div>
+        <div>
+          <FaMoneyBillTrendUp />
+          <p>
+            <b>Rentabilidad estimada:</b> {formatToThreeDecimals(rentabilidad)}
+          </p>
+        </div>
+
+        <div>
+          <FaCalendarDay />
+          <p>
+            <b>Fecha de inicio de rentabilidad:</b> <br/>{fecha_inicio_rentabilidad}
+          </p>
+        </div>
       </div>
     </div>
   );
